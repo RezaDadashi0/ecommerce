@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Pagination from "../components/Pagination";
 import paginate from "../utils/paginate";
 import Categori from "../components/Categori";
+import Slider from "../components/Slider";
 
 function Main() {
   // --------------- Redux Toolkit Section: ---------------
@@ -61,12 +62,14 @@ function Main() {
   let searchedProducts = filterdProducts;
 
   if (search)
-    searchedProducts = filterdProducts.filter(p => p.name.startsWith(search));
+    searchedProducts = filterdProducts.filter(p => p.name.includes(search));
 
   const paginatedProducts = paginate(searchedProducts, pageSize, currentPage);
 
   return (
     <>
+      {/* Slider Section */}
+      <Slider />
       {/* Search Section */}
       <div className="flex max-w-xl mx-auto">
         <div className="relative w-full">

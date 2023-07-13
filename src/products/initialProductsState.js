@@ -3,7 +3,7 @@ import { v4 as uuid } from "uuid";
 export const initialProducts = [
   {
     id: uuid(),
-    name: "محصول 1",
+    name: "اول",
     img: "productImg__1",
     categori: "free",
     price: 0,
@@ -12,7 +12,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 2",
+    name: "دوم",
     img: "productImg__2",
     categori: "mostSale",
     price: 400,
@@ -21,7 +21,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 3",
+    name: "سوم",
     img: "productImg__3",
     categori: "mostVisit",
     price: 450,
@@ -30,7 +30,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 4",
+    name: "چهارم",
     img: "productImg__4",
     categori: "hasOff",
     price: 250,
@@ -39,7 +39,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 5",
+    name: "پنجم",
     img: "productImg__5",
     categori: "mostExpensive",
     price: 750,
@@ -48,7 +48,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 6",
+    name: "ششم",
     img: "productImg__6",
     categori: "free",
     price: 0,
@@ -57,7 +57,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 7",
+    name: "هفتم",
     img: "productImg__7",
     categori: "mostSale",
     price: 400,
@@ -66,7 +66,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 8",
+    name: "هشتم",
     img: "productImg__8",
     categori: "mostVisit",
     price: 450,
@@ -75,7 +75,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 9",
+    name: "نهم",
     img: "productImg__9",
     categori: "hasOff",
     price: 250,
@@ -84,7 +84,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 10",
+    name: "دهم",
     img: "productImg__10",
     categori: "mostExpensive",
     price: 750,
@@ -93,7 +93,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 11",
+    name: "یازدهم",
     img: "productImg__11",
     categori: "free",
     price: 0,
@@ -102,7 +102,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 12",
+    name: "دوازدهم",
     img: "productImg__12",
     categori: "mostSale",
     price: 400,
@@ -111,7 +111,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 13",
+    name: "سیزدهم",
     img: "productImg__13",
     categori: "mostVisit",
     price: 450,
@@ -120,7 +120,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 14",
+    name: "چهاردهم",
     img: "productImg__14",
     categori: "hasOff",
     price: 250,
@@ -129,7 +129,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 15",
+    name: "پانزدهم",
     img: "productImg__15",
     categori: "mostExpensive",
     price: 750,
@@ -138,7 +138,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 16",
+    name: "شانزدهم",
     img: "productImg__16",
     categori: "free",
     price: 0,
@@ -147,7 +147,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 17",
+    name: "هفدهم",
     img: "productImg__17",
     categori: "mostSale",
     price: 400,
@@ -156,7 +156,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 18",
+    name: "هجدهم",
     img: "productImg__18",
     categori: "mostVisit",
     price: 450,
@@ -165,7 +165,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 19",
+    name: "نوزدهم",
     img: "productImg__19",
     categori: "hasOff",
     price: 250,
@@ -174,7 +174,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 20",
+    name: "بیستم",
     img: "productImg__20",
     categori: "mostExpensive",
     price: 750,
@@ -183,7 +183,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 21",
+    name: "بیست و یکم",
     img: "productImg__21",
     categori: "hasOff",
     price: 250,
@@ -192,7 +192,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 22",
+    name: "بیست و دوم",
     img: "productImg__22",
     categori: "free",
     price: 0,
@@ -201,7 +201,7 @@ export const initialProducts = [
   },
   {
     id: uuid(),
-    name: "محصول 23",
+    name: "بیست و سوم",
     img: "productImg__23",
     categori: "mostSale",
     price: 400,
