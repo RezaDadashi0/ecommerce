@@ -1,0 +1,38 @@
+@font-face {
+  font-family: Est-Medium;
+  src: url(./fonts/Estedad-FD-Medium.ttf);
+}
+
+@font-face {
+  font-family: Est-Thin;
+  src: url(./fonts/Estedad-FD-Thin.ttf);
+}
+
+@font-face {
+  font-family: Est-Bold;
+  src: url(./fonts/Estedad-FD-Bold.ttf);
+}
+
+@font-face {
+  font-family: Est-Light;
+  src: url(./fonts/Estedad-FD-Light.ttf);
+}
+
+@font-face {
+  font-family: Est-Black;
+  src: url(./fonts/Estedad-FD-Black.ttf);
+}
+
+@font-face {
+  font-family: Mj;
+  src: url(./fonts/Mj\ flow.ttf);
+}
+
+@font-face {
+  font-family: Yek;
+  src: url(./fonts/Yekan.ttf);
+}
+
+#root {
+  font-family: Mj;
+}
