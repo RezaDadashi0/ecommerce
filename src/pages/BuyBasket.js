@@ -1,6 +1,5 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import {
   addOrIncrementProduct,
   decrementProduct,
@@ -35,7 +34,8 @@ function BuyBasket() {
                 <div className="px-6 py-4">
                   <div className="font-bold text-xl mb-2">{product.name}</div>
                   <p className="text-gray-700 text-base">
-                    {product.description}
+                    {product.totalPrice}
+                    <span className="mx-3">هزار تومان</span>
                   </p>
                 </div>
                 <div className="flex justify-between items-center py-5 px-3">
@@ -43,7 +43,7 @@ function BuyBasket() {
                   <button
                     type="button"
                     onClick={() => dispatch(deleteProduct(product))}
-                    className="py-2 px-4 bg-red-600 hover:bg-red-700 focus:ring-red-500 focus:ring-offset-red-200 text-white transition ease-in duration-200 text-center text-base font-light shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg "
+                    className="py-1 px-4 bg-red-600 hover:bg-red-700 focus:ring-red-500 focus:ring-offset-red-200 text-white transition ease-in duration-200 text-center text-sm font-light shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg "
                   >
                     حذف از سبد خرید
                   </button>
@@ -56,7 +56,7 @@ function BuyBasket() {
                     >
                       +
                     </button>
-                    <div className="mx-auto text-center leading-8 border w-12 h-8">
+                    <div className="mx-auto text-center leading-8 border-t border-b w-12 h-8">
                       {product.count}
                     </div>
                     <button

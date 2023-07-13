@@ -10,16 +10,23 @@ export const buyBasketSlice = createSlice({
   initialState,
   reducers: {
     addOrIncrementProduct: (state, action) => {
-      state.products.find(p => p.id === action.payload.id).count++;
+      const product = state.products.find(p => p.id === action.payload.id);
+      product.count++;
+      product.totalPrice = product.price * product.count;
     },
     decrementProduct: (state, action) => {
-      state.products.find(p => p.id === action.payload.id).count--;
+      const product = state.products.find(p => p.id === action.payload.id);
+      product.count--;
+      product.totalPrice = product.price * product.count;
     },
     deleteProduct: (state, action) => {
-      state.products.find(p => p.id === action.payload.id).count = 0;
+      const product = state.products.find(p => p.id === action.payload.id);
+      product.count = 0;
+      delete product.totalPrice;
     },
   },
 });
 
-export const { addOrIncrementProduct, decrementProduct, deleteProduct } = buyBasketSlice.actions;
+export const { addOrIncrementProduct, decrementProduct, deleteProduct } =
+  buyBasketSlice.actions;
 export default buyBasketSlice.reducer;

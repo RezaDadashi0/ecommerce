@@ -24,7 +24,10 @@ function Main() {
             />
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">{product.name}</div>
-              <p className="text-gray-700 text-base">{product.description}</p>
+              <p className="text-gray-700 text-base">
+                {product.price}
+                <span className="mx-3">هزار تومان</span>
+              </p>
             </div>
             <div className="flex justify-center items-center mb-7">
               {product.count ? (
