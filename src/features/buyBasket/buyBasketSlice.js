@@ -9,17 +9,17 @@ export const buyBasketSlice = createSlice({
   name: "buyBasket",
   initialState,
   reducers: {
-    addProductToBuyBasket: (state, action) => {
+    addOrIncrementProduct: (state, action) => {
       state.products.find(p => p.id === action.payload.id).count++;
     },
-    // incrementProduct: state => {}
-    // decrementProduct: state => {},
-    deleteProductFromBuyBasket: (state, action) => {
-      state.products.filter(p => p.id !== action.payload);
+    decrementProduct: (state, action) => {
+      state.products.find(p => p.id === action.payload.id).count--;
+    },
+    deleteProduct: (state, action) => {
+      state.products.find(p => p.id === action.payload.id).count = 0;
     },
   },
 });
 
-export const { addProductToBuyBasket, deleteProductFromBuyBasket } =
-  buyBasketSlice.actions;
+export const { addOrIncrementProduct, decrementProduct, deleteProduct } = buyBasketSlice.actions;
 export default buyBasketSlice.reducer;
