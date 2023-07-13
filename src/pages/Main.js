@@ -2,26 +2,89 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addOrIncrementProduct } from "../features/buyBasket/buyBasketSlice";
 import { Link } from "react-router-dom";
-import Pagination from "../components/pagination";
+import Pagination from "../components/Pagination";
 import paginate from "../utils/paginate";
+import Categori from "../components/Categori";
 
 function Main() {
+  // --------------- Redux Toolkit Section: ---------------
+
   const products = useSelector(state => state.buyBasket.products);
   const dispatch = useDispatch();
 
+  // --------------- useState Section: ---------------
+
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize] = useState(3);
+  const [search, setSearch] = useState("");
+  const [categori, setCategori] = useState("");
+  const [categories] = useState([
+    { active: true, title: "" },
+    { active: false, title: "free" },
+    { active: false, title: "mostVisit" },
+    { active: false, title: "mostSale" },
+    { active: false, title: "hasOff" },
+    { active: false, title: "mostExpensive" },
+  ]);
+
+  // --------------- Helper Methods Section: ---------------
+
+  const handleCategori = categori => {
+    setCategori(categori.title);
+
+    const clonedCategories = [...categories];
+    const indexof = clonedCategories.indexOf(categori);
+    // deselect all:
+    clonedCategories.map(c => (c.active = false));
+    // select one:
+    clonedCategories[indexof].active = true;
+  };
 
   const handlePagination = pageNumber => {
     setCurrentPage(pageNumber);
   };
 
-  const paginatedProducts = paginate(products, pageSize, currentPage);
+  const handleSearch = e => {
+    setSearch(e.target.value);
+    setCurrentPage(1);
+  };
+
+  // --------------- Filter, Search and Paginating Products: ---------------
+
+  let filterdProducts = products;
+
+  filterdProducts = categori
+    ? products.filter(p => p.categori === categori)
+    : // if there is no categori then we shoud asign all products as filterd products
+      products;
+
+  let searchedProducts = filterdProducts;
+
+  if (search)
+    searchedProducts = filterdProducts.filter(p => p.name.startsWith(search));
+
+  const paginatedProducts = paginate(searchedProducts, pageSize, currentPage);
 
   return (
     <>
+      {/* Search Section */}
+      <div className="flex max-w-xl mx-auto">
+        <div className="relative w-full">
+          <input
+            type="search"
+            autoFocus
+            value={search}
+            onChange={handleSearch}
+            placeholder="جست و جو . . . "
+            className="mt-5 p-2.5 w-full text-sm outline-indigo-500 text-gray-800 bg-gray-50 rounded-lg border border-gray-400 focus:ring-indigo-500 focus:border-indigo-500"
+          />
+        </div>
+      </div>
+      {/* Categori Section */}
+      <Categori categories={categories} onClick={handleCategori} />
+
       {/* products container: */}
-      <div className="flex flex-wrap justify-center max-w-7xl mx-auto md:p-8">
+      <div className="flex flex-wrap justify-center max-w-7xl mx-auto md:py-5 md:px-8">
         {/* each product item: */}
         {paginatedProducts.map(product => (
           <div
@@ -35,11 +98,17 @@ function Main() {
                 alt="product_image"
               />
               <div className="px-6 py-4">
-                <div className="font-bold text-base mb-2">{product.name}</div>
-                <p className="text-gray-700">
-                  {product.price}
-                  <span className="mx-3">هزار تومان</span>
-                </p>
+                <div className="flex justify-between mb-2">
+                  <div className="font-bold text-base">{product.name}</div>
+                  <p className="text-gray-700">
+                    {product.price}
+                    <span className="mx-3">هزار تومان</span>
+                  </p>
+                </div>
+                <div className="text-amber-500">
+                  <span className="text-gray-600 ml-2">دسته بندی: </span>
+                  {product.description}
+                </div>
               </div>
               <div className="flex justify-center items-center mb-5">
                 {product.count ? (
@@ -63,9 +132,10 @@ function Main() {
           </div>
         ))}
       </div>
+      {/* Pagination Section */}
       <Pagination
         onClick={handlePagination}
-        length={products.length}
+        length={searchedProducts.length}
         pageSize={pageSize}
         currentPage={currentPage}
       />

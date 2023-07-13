@@ -29,7 +29,7 @@ function BuyBasket() {
               تکمیل فرآیند خرید
             </Link>
           </div>
-          <div className="flex flex-wrap justify-center max-w-7xl mx-auto md:p-8 md:pt-3">
+          <div className="flex flex-wrap justify-center max-w-7xl mx-auto md:py-5 md:px-8 md:pt-3">
             {/* each product item: */}
             {selectedProducts.map(product => (
               <div
@@ -43,11 +43,17 @@ function BuyBasket() {
                     alt="product_image"
                   />
                   <div className="px-6 py-4">
-                    <div className="font-bold text-lg mb-2">{product.name}</div>
-                    <p className="text-gray-700">
-                      {product.totalPrice}
-                      <span className="mx-3">هزار تومان</span>
-                    </p>
+                    <div className="flex justify-between mb-2">
+                      <div className="font-bold text-base">{product.name}</div>
+                      <p className="text-gray-700">
+                        {product.totalPrice}
+                        <span className="mx-3">هزار تومان</span>
+                      </p>
+                    </div>
+                    <div className="text-amber-500">
+                      <span className="text-gray-600 ml-2">دسته بندی: </span>
+                      {product.description}
+                    </div>
                   </div>
                   <div className="flex justify-between items-center mb-5 px-3">
                     {/* delete product from buy basket */}
