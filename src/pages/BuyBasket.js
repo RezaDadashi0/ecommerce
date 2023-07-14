@@ -29,7 +29,7 @@ function BuyBasket() {
               تکمیل فرآیند خرید
             </Link>
           </div>
-          <div className="flex flex-wrap justify-center max-w-7xl mx-auto md:py-5 md:px-8 md:pt-3">
+          <div className="flex flex-wrap justify-center max-w-7xl mx-auto py-5 md:px-8">
             {/* each product item: */}
             {selectedProducts.map(product => (
               <div
@@ -38,7 +38,7 @@ function BuyBasket() {
               >
                 <div className="border rounded-3xl text-sm overflow-hidden shadow-lg">
                   <img
-                    className="w-full h-60"
+                    className="w-full h-60 object-cover"
                     src={require(`../products/productImages/${product.img}.jpg`)}
                     alt="product_image"
                   />
@@ -50,9 +50,11 @@ function BuyBasket() {
                         <span className="mx-3">هزار تومان</span>
                       </p>
                     </div>
-                    <div className="text-amber-500">
-                      <span className="text-gray-600 ml-2">دسته بندی: </span>
-                      {product.description}
+                    <div>
+                      <span className="text-gray-600 ml-1">دسته بندی: </span>
+                      <span className="text-amber-500 bg-amber-100 py-1 px-5 rounded-lg">
+                        {product.description}
+                      </span>
                     </div>
                   </div>
                   <div className="flex justify-between items-center mb-5 px-3">

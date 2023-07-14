@@ -8,10 +8,10 @@ function Header() {
   const selectedProducts = allProducts.filter(p => p.count > 0);
 
   return (
-    <header className="max-w-xl mx-auto flex justify-between pt-3">
+    <header className="max-w-xl mx-auto flex justify-between px-5 pt-3">
       <div>نام کاربر</div>
       <Link to="/buy-basket">
-        <span class="bg-pink-100 hover:bg-pink-200 transition ease-in duration-200 text-pink-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-lg border border-pink-400">
+        <span class="bg-pink-100 hover:bg-pink-200 transition ease-in duration-200 text-pink-800 text-xs font-medium mr-2 px-4 py-1 rounded-lg">
           <span className="mx-2">سبد خرید</span>
           {selectedProducts.length}
         </span>
