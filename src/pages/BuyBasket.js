@@ -6,6 +6,8 @@ import {
   deleteProduct,
 } from "../features/buyBasket/buyBasketSlice";
 import { Link } from "react-router-dom";
+import ArticleIcon from "@mui/icons-material/Article";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
 function BuyBasket() {
   const allProducts = useSelector(state => state.buyBasket.products);
@@ -24,9 +26,10 @@ function BuyBasket() {
             {/* delete product from buy basket */}
             <Link
               to="/buy-completion"
-              className="py-3 px-12 bg-lime-600 hover:bg-lime-700 focus:ring-lime-500 focus:ring-offset-lime-200 text-white transition ease-in duration-200 text-center text-sm font-light shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg "
+              className="py-3 w-52 mx-auto bg-lime-600 hover:bg-lime-700 focus:ring-lime-500 focus:ring-offset-lime-200 text-white transition ease-in duration-200 text-sm font-light shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg flex justify-around items-center"
             >
               تکمیل فرآیند خرید
+              <ArticleIcon />
             </Link>
           </div>
           <div className="flex flex-wrap justify-center max-w-7xl mx-auto py-5 md:px-8">
@@ -62,9 +65,10 @@ function BuyBasket() {
                     <button
                       type="button"
                       onClick={() => dispatch(deleteProduct(product))}
-                      className="py-1 px-4 bg-red-600 hover:bg-red-700 focus:ring-red-500 focus:ring-offset-red-200 text-white transition ease-in duration-200 text-center text-sm font-light shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg "
+                      className="py-1 w-5/12 bg-red-600 hover:bg-red-700 focus:ring-red-500 focus:ring-offset-red-200 text-white transition ease-in duration-200 text-sm font-light shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg flex justify-around items-center"
                     >
-                      حذف از سبد خرید
+                      حذف از سبد
+                      <DeleteOutlineIcon />
                     </button>
                     {/* increment or decrement product from buy basket */}
 

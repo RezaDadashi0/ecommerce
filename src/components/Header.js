@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 function Header() {
   const allProducts = useSelector(state => state.buyBasket.products);
@@ -11,10 +12,13 @@ function Header() {
     <header className="max-w-xl mx-auto flex justify-between px-5 pt-3">
       <div>نام کاربر</div>
       <Link to="/buy-basket">
-        <span class="bg-pink-100 hover:bg-pink-200 transition ease-in duration-200 text-pink-800 text-xs font-medium mr-2 px-4 py-1 rounded-lg">
-          <span className="mx-2">سبد خرید</span>
-          {selectedProducts.length}
-        </span>
+        <div className="relative flex items-center">
+          <span className="text-xs font-bold text-gray-500">سبد خرید</span>
+          <div className="absolute px-[6px] py-[1px] -top-2 left-3 rounded-full bg-red-500 text-red-50 flex justify-center items-center text-xs">
+            {selectedProducts.length}
+          </div>
+          <ShoppingCartIcon />
+        </div>
       </Link>
     </header>
   );

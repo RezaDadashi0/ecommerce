@@ -6,6 +6,8 @@ import Pagination from "../components/Pagination";
 import paginate from "../utils/paginate";
 import Categori from "../components/Categori";
 import Slider from "../components/Slider";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 function Main() {
   // --------------- Redux Toolkit Section: ---------------
@@ -119,17 +121,19 @@ function Main() {
                 {product.count ? (
                   <Link
                     to="/buy-basket"
-                    className="py-2 px-10 bg-lime-600 hover:bg-lime-700 focus:ring-lime-500 focus:ring-offset-lime-200 text-white transition ease-in duration-200 text-center font-light shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg "
+                    className="py-2 w-8/12 bg-lime-600 hover:bg-lime-700 focus:ring-lime-500 focus:ring-offset-lime-200 text-white transition ease-in duration-200 font-light shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg flex justify-around items-center"
                   >
                     تکمیل سبد خرید
+                    <ShoppingCartIcon />
                   </Link>
                 ) : (
                   <button
                     type="button"
                     onClick={() => dispatch(addOrIncrementProduct(product))}
-                    className="py-2 px-10 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white transition ease-in duration-200 text-center font-light shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg "
+                    className="py-2 w-8/12 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white transition ease-in duration-200 font-light shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg flex justify-around items-center"
                   >
                     افزودن به سبد خرید
+                    <AddShoppingCartIcon />
                   </button>
                 )}
               </div>
