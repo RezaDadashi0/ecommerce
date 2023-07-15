@@ -24,9 +24,19 @@ export const buyBasketSlice = createSlice({
       product.count = 0;
       delete product.totalPrice;
     },
+    resetProducts: state => {
+      state.products.forEach(p => {
+        p.count = 0;
+        delete p.totalPrice;
+      });
+    },
   },
 });
 
-export const { addOrIncrementProduct, decrementProduct, deleteProduct } =
-  buyBasketSlice.actions;
+export const {
+  addOrIncrementProduct,
+  decrementProduct,
+  deleteProduct,
+  resetProducts,
+} = buyBasketSlice.actions;
 export default buyBasketSlice.reducer;

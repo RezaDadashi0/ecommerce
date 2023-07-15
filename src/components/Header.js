@@ -1,9 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { userLogsOut } from "../features/user/userSlice";
+import { resetProducts } from "../features/buyBasket/buyBasketSlice";
 
 function Header() {
   const allProducts = useSelector(state => state.buyBasket.products);
@@ -13,6 +14,14 @@ function Header() {
 
   // products that has count grater than zero means selected by user:
   const selectedProducts = allProducts.filter(p => p.count > 0);
+
+  const navigate = useNavigate();
+
+  const handleExit = (user) => {
+    dispatch(userLogsOut(user));
+    dispatch(resetProducts());
+    navigate("/");
+  };
 
   return (
     <header className="max-w-3xl mx-auto flex px-5 pt-3">
@@ -29,7 +38,7 @@ function Header() {
           <ShoppingCartIcon />
         </div>
       </Link>
-      <button className="mr-10" onClick={() => dispatch(userLogsOut(user))}>
+      <button className="mr-10" onClick={() => handleExit(user)}>
         <span className="text-xs font-bold text-gray-500">خروج</span>
         <LogoutIcon color="error" />
       </button>
