@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Main from "./pages/Main";
+// import Login from "./pages/Login";
 import Header from "./components/Header";
 import BuyBasket from "./pages/BuyBasket";
 import BuyCompletion from "./pages/BuyCompletion";
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
+        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/products/:id" element={<ShowProduct />} />
         <Route path="/buy-completion" element={<BuyCompletion />} />
         <Route path="/buy-basket" element={<BuyBasket />} />

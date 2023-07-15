@@ -37,15 +37,15 @@ function Slider() {
 
   return (
     <>
-      <Link to={`/products/${product.id}`}>
-        <div className="relative border rounded-3xl w-full max-w-3xl my-5 md:w-4/5 mx-auto h-[300px]">
+      <div className="relative border rounded-3xl w-full max-w-3xl my-5 md:w-4/5 mx-auto h-[300px]">
+        <Link to={`/products/${product.id}`}>
           <img
             className="w-full h-full object-cover rounded-3xl"
             src={require(`../products/productImages/${product.img}.jpg`)}
             alt="product_image"
           />
-        </div>
-      </Link>
+        </Link>
+      </div>
       <ul className="flex items-center justify-center -mt-5">
         {/* indecators and indecator are actually products and product */}
         {indecators.map((indecator, i) => (

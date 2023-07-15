@@ -11,12 +11,12 @@ export default function Categori({ categories, onClick }) {
   ];
 
   const activeCategoriClassName =
-    "border cursor-pointer rounded-lg m-1 text-sm px-8 py-2 bg-blue-100 border-blue-100 text-blue-500";
+    "border cursor-pointer rounded-lg m-1 px-8 py-2 bg-blue-100 border-blue-100 text-blue-500";
   const nonActiveCategoriClassName =
-    "border cursor-pointer rounded-lg m-1 text-sm px-8 py-2 text-gray-500 hover:border-blue-400 hover:text-blue-400 transition ease";
+    "border cursor-pointer rounded-lg m-1 px-8 py-2 text-gray-500 hover:bg-blue-100 hover:text-blue-500 transition ease";
 
   return (
-    <ul className="flex flex-wrap justify-center items-center pt-3">
+    <ul className="flex flex-wrap justify-center items-center pt-3 text-sm font-bold">
       {categories.map((categori, index) => (
         <li
           key={index}
