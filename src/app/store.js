@@ -1,5 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import buyBasketReducer from "../features/buyBasket/buyBasketSlice";
+import userReducer from "../features/user/userSlice";
 import storage  from "redux-persist/lib/storage";
 import {persistReducer} from "redux-persist";
 
@@ -11,7 +12,8 @@ const persistConfig = {
 }
 
 const reducer = combineReducers({
-  buyBasket: buyBasketReducer
+  buyBasket: buyBasketReducer,
+  user: userReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);
