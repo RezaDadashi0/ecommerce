@@ -34,6 +34,7 @@ function Main() {
 
   const handleCategori = categori => {
     setCategori(categori.title);
+    setCurrentPage(1);
 
     const clonedCategories = [...categories];
     const indexof = clonedCategories.indexOf(categori);
