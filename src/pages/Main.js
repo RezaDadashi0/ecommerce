@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addOrIncrementProduct } from "../features/buyBasket/buyBasketSlice";
 import { Link } from "react-router-dom";
-import Pagination from "../components/Pagination";
+import Pagination from "../components/pagination";
 import paginate from "../utils/paginate";
 import Categori from "../components/Categori";
 import Slider from "../components/Slider";
