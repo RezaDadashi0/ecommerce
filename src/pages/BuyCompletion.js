@@ -57,12 +57,16 @@ function BuyCompletion() {
   // Get All Provinces:
   useEffect(() => {
     const getProvinces = async () => {
-      const { data } = await axios.get(
-        "https://iran-locations-api.vercel.app/api/v1/states"
-      );
-      setProvinceOptions(
-        data.map(d => ({ value: d.name, label: d.name, id: d.id }))
-      );
+      try {
+        const { data } = await axios.get(
+          "https://iran-locations-api.vercel.app/api/v1/states"
+        );
+        setProvinceOptions(
+          data.map(d => ({ value: d.name, label: d.name, id: d.id }))
+        );
+      } catch (error) {
+        console.log(error);
+      }
     };
     getProvinces();
   });
@@ -71,12 +75,16 @@ function BuyCompletion() {
   useEffect(() => {
     if (province) {
       const getProvinceCities = async () => {
-        const { data } = await axios.get(
-          `https://iran-locations-api.vercel.app/api/v1/cities?state=${province.label}`
-        );
-        setCityOptions(
-          data.cities.map(d => ({ value: d.name, label: d.name, id: d.id }))
-        );
+        try {
+          const { data } = await axios.get(
+            `https://iran-locations-api.vercel.app/api/v1/cities?state=${province.label}`
+          );
+          setCityOptions(
+            data.cities.map(d => ({ value: d.name, label: d.name, id: d.id }))
+          );
+        } catch (error) {
+          console.log(error);
+        }
       };
       getProvinceCities();
     }
