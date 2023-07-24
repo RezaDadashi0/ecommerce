@@ -7,7 +7,6 @@ function ProductInfo({ product }) {
     <>
       <img
         className="w-full h-60 object-cover"
-        // src={require(`../products/productImages/${img}.jpg`)}
         src={require(`../../products/productImages/${img}.jpg`)}
         alt="product_image"
       />

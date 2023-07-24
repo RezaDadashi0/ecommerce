@@ -69,7 +69,7 @@ function BuyCompletion() {
       }
     };
     getProvinces();
-  });
+  },[]); // we need list of provices when component mounts, and we dont need it to be rerender. so we use an empty array to render provinces just once (no dependences)!
 
   // Get All Province Cites:
   useEffect(() => {

@@ -83,26 +83,3 @@ function ProductAction({ product, productActionType }) {
 }
 
 export default ProductAction;
-
-// <div className="border rounded-3xl text-sm overflow-hidden shadow-lg">
-// <img
-//   className="w-full h-60 object-cover"
-//   src={require(`../products/productImages/${product.img}.jpg`)}
-//   alt="product_image"
-// />
-// <div className="px-6 py-4">
-//   <div className="flex justify-between mb-2">
-//     <div className="font-bold text-base">{product.name}</div>
-//     <p className="text-gray-700">
-//       {product.totalPrice}
-//       <span className="mx-3">هزار تومان</span>
-//     </p>
-//   </div>
-//   <div>
-//     <span className="text-gray-600 ml-1">دسته بندی: </span>
-//     <span className="text-amber-500 bg-amber-100 py-1 px-5 rounded-lg">
-//       {product.description}
-//     </span>
-//   </div>
-// </div>
-// </div>
